@@ -71,7 +71,7 @@ export const Main = (): JSX.Element => {
   );
 
   // Handle search input change
-  const handleSearchChange = (e) => {
+  const handleSearchChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setSearchQuery(e.target.value);
     setShowResults(e.target.value.length > 0);
   };

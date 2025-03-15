@@ -1,1 +1,1 @@
-export { Search } from "./Search";
+export { Main } from "./Search";
