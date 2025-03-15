@@ -10,10 +10,10 @@ createRoot(document.getElementById("app") as HTMLElement).render(
   <StrictMode>
     <Router>
       <Routes>
-        <Route path="/" element={< Main />} />
-        <Route path="/instant-diagnosis" element={< Diagnosis />} />
+        <Route path="/" element={<Main />} />
+        <Route path="/Diagnosis" element={<Diagnosis />} />
         {/* <Route path="/care-recommendations" element={< CareRecommendations />} /> */}
-        <Route path="/history" element={< History />} />
+        <Route path="/History" element={<History />} />
       </Routes>
     </Router>
   </StrictMode>

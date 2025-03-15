@@ -3,6 +3,7 @@ import { SearchIcon } from "lucide-react";
 import { Button } from "../../components/ui/button";
 import { Card, CardContent } from "../../components/ui/card";
 import { Input } from "../../components/ui/input";
+import { Link } from "react-router-dom";
 
 export const Main = (): JSX.Element => {
   // Data for feature cards
@@ -18,6 +19,7 @@ export const Main = (): JSX.Element => {
           src="https://c.animaapp.com/xhN4OijC/img/group@2x.png"
         />
       ),
+      link: "/Diagnosis",
     },
     {
       title: "Care Recommendations",
@@ -30,6 +32,7 @@ export const Main = (): JSX.Element => {
           src="https://c.animaapp.com/xhN4OijC/img/material-symbols-info-outline-rounded.svg"
         />
       ),
+      link: "/care-recommendations",
     },
     {
       title: "ScanIcon History",
@@ -42,6 +45,7 @@ export const Main = (): JSX.Element => {
           src="https://c.animaapp.com/xhN4OijC/img/material-symbols-history-rounded.svg"
         />
       ),
+      link: "/History",
     },
   ];
 
@@ -102,26 +106,28 @@ export const Main = (): JSX.Element => {
         {/* Feature Cards */}
         <div className="space-y-4">
           {featureCards.map((card, index) => (
-            <Card
-              key={index}
-              className="w-full bg-[url(https://c.animaapp.com/xhN4OijC/img/instant-diagnosis-b-box.svg)] bg-[100%_100%] border-none"
-            >
-              <CardContent className="p-0">
-                <div className="flex items-center p-3">
-                  <div className="w-[76px] h-[76px] flex items-center justify-center">
-                    {card.icon}
+            <Link key={index} to={card.link}>
+              <Card
+                key={index}
+                className="w-full bg-[url(https://c.animaapp.com/xhN4OijC/img/instant-diagnosis-b-box.svg)] bg-[100%_100%] border-none"
+              >
+                <CardContent className="p-0">
+                  <div className="flex items-center p-3">
+                    <div className="w-[76px] h-[76px] flex items-center justify-center">
+                      {card.icon}
+                    </div>
+                    <div className="ml-4">
+                      <h3 className="font-['Rubik',Helvetica] font-medium text-[15px] text-[#4d3c30] text-center">
+                        {card.title}
+                      </h3>
+                      <p className="font-['Rubik',Helvetica] font-light text-[10px] text-[#4d3c30] text-center mt-1">
+                        {card.description}
+                      </p>
+                    </div>
                   </div>
-                  <div className="ml-4">
-                    <h3 className="font-['Rubik',Helvetica] font-medium text-[15px] text-[#4d3c30] text-center">
-                      {card.title}
-                    </h3>
-                    <p className="font-['Rubik',Helvetica] font-light text-[10px] text-[#4d3c30] text-center mt-1">
-                      {card.description}
-                    </p>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
+                </CardContent>
+              </Card>
+            </Link>
           ))}
         </div>
       </div>

@@ -1,5 +1,5 @@
 import { HomeIcon } from "lucide-react";
-import React from "react";
+// import React from "react";
 import { Card, CardContent } from "../../components/ui/card";
 
 // Define plant diagnosis data for mapping
@@ -46,6 +46,7 @@ const plantDiagnoses = [
 ];
 
 export const History = (): JSX.Element => {
+  console.log("History page rendered");
   return (
     <div className="bg-[#f5f2ec] flex flex-row justify-center w-full min-h-screen">
       <div className="bg-[#f5f2ec] w-full max-w-[393px] relative py-4 px-4">
