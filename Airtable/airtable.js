@@ -4,7 +4,7 @@ const AIRTABLE_PAT = process.env.REACT_APP_AIRTABLE_PAT;  // Replace with your a
 const AIRTABLE_BASE_ID = "appK4c7AaDouGVGbz"
 
 const airtableAPI = axios.create({
-  baseURL: `https://api.airtable.com/v0/${AIRTABLE_BASE_ID}/${"Plants"}`,
+  baseURL: `https://api.airtable.com/v0/${AIRTABLE_BASE_ID}/${"Scans"}`,
   headers: {
     Authorization: `Bearer ${AIRTABLE_PAT}`,
     "Content-Type": "application/json",
@@ -12,7 +12,7 @@ const airtableAPI = axios.create({
 });
 
 // Fetch records
-export const fetchPlants = async () => {
+export const fetchScans = async () => {
   try {
     const response = await airtableAPI.get();
     return response.data.records;  // Returns an array of records
@@ -23,10 +23,10 @@ export const fetchPlants = async () => {
 };
 
 // Add a new plant
-export const addPlant = async (newPlant) => {
+export const addScan = async (newScan) => {
   try {
     const response = await airtableAPI.post("/", {
-      records: [{ fields: newPlant }],
+      records: [{ fields: newScan }],
     });
     return response.data;
   } catch (error) {
