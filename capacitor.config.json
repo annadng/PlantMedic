@@ -1,0 +1,6 @@
+{
+  "appId": "com.unimac.plantmedic",
+  "appName": " Plant Medic",
+  "webDir": "dist",
+  "bundledWebRuntime": false
+}
