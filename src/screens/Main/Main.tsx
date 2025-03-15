@@ -1,5 +1,5 @@
 import { SearchIcon } from "lucide-react";
-import React from "react";
+// import React from "react";
 import { Button } from "../../components/ui/button";
 import { Card, CardContent } from "../../components/ui/card";
 import { Input } from "../../components/ui/input";
@@ -32,7 +32,7 @@ export const Main = (): JSX.Element => {
       ),
     },
     {
-      title: "Scan History",
+      title: "ScanIcon History",
       description:
         "Access all your previous plant scans and diagnoses in one convenient place",
       icon: (
@@ -75,7 +75,7 @@ export const Main = (): JSX.Element => {
               <div className="flex-1 relative">
                 <Input
                   className="pl-10 py-2 h-[62px] bg-neutral-100 rounded-xl font-['Rubik',Helvetica] text-[15px] text-[#8b8686]"
-                  placeholder="Search for plants..."
+                  placeholder="SearchIcon for plants..."
                 />
                 <SearchIcon className="absolute left-3 top-1/2 transform -translate-y-1/2 w-6 h-6 text-[#8b8686]" />
               </div>
@@ -89,7 +89,7 @@ export const Main = (): JSX.Element => {
             </div>
 
             <Button className="w-full h-[39px] bg-[#7d9b76] hover:bg-[#6c8a65] rounded-md font-['Rubik',Helvetica] font-medium text-[15px]">
-              View My Scan History
+              View My ScanIcon HistoryIcon
             </Button>
           </CardContent>
         </Card>
