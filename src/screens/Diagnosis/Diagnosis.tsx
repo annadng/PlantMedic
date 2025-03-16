@@ -2,6 +2,7 @@ import { HomeIcon } from "lucide-react";
 // import React from "react";
 import { Button } from "../../components/ui/button";
 import { Card, CardContent } from "../../components/ui/card";
+import { JSX } from "react/jsx-runtime";
 
 export const Diagnosis = (): JSX.Element => {
   // Plant diagnosis data

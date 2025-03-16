@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import { Button } from "../../components/ui/button";
 import { Card, CardContent } from "../../components/ui/card";
 import { Input } from "../../components/ui/input";
+import { JSX } from "react/jsx-runtime";
 
 export const Main = (): JSX.Element => {
   // State for search input and results visibility
