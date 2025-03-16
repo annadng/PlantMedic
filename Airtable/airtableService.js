@@ -11,7 +11,7 @@ const TABLES = {
   ISSUE_TYPES: "Issue_Types",
   PLANT_ISSUES: "Plant_Specific_Issues",
   USERS: "Users",
-  SCANS: "Scan_History"
+  SCANS: "Scan History"  // Note: space instead of underscore
 };
 
 // Create a base axios instance for Airtable API
@@ -99,13 +99,13 @@ export const fetchPlantIssuesByPlant = async (plantId) => {
 // Users
 export const fetchUsers = () => fetchRecords(TABLES.USERS);
 export const fetchUserById = (id) => fetchRecord(TABLES.USERS, id);
-export const fetchUserByEmail = async (email) => {
+export const fetchUserByName = async (name) => {
   try {
-    const formula = encodeURIComponent(`{Email} = '${email}'`);
+    const formula = encodeURIComponent(`{Name} = '${name}'`);
     const response = await airtableAPI(TABLES.USERS).get(`?filterByFormula=${formula}`);
     return response.data.records.length > 0 ? response.data.records[0] : null;
   } catch (error) {
-    console.error("Error fetching user by email:", error);
+    console.error("Error fetching user by name:", error);
     return null;
   }
 };
