@@ -1,6 +1,7 @@
 import { HomeIcon } from "lucide-react";
 // import React from "react";
 import { Card, CardContent } from "../../components/ui/card";
+import { Link } from "react-router-dom";
 
 // Define plant diagnosis data for mapping
 const plantDiagnoses = [
@@ -46,7 +47,7 @@ const plantDiagnoses = [
 ];
 
 export const History = (): JSX.Element => {
-  console.log("History page rendered");
+  
   return (
     <div className="bg-[#f5f2ec] flex flex-row justify-center w-full min-h-screen">
       <div className="bg-[#f5f2ec] w-full max-w-[393px] relative py-4 px-4">
@@ -55,18 +56,18 @@ export const History = (): JSX.Element => {
           <div className="flex items-center">
             {/* Logo image */}
             <img 
-              src="/api/placeholder/200/60" 
+              src="https://c.animaapp.com/xhN4OijC/img/logo-1@2x.png" 
               alt="PlantMedic Logo" 
               className="h-12 w-auto object-contain"
             />
-            {/* Note: In production, replace the placeholder with the actual logo URL */}
-            {/* For example: src="https://example.com/plantmedic-logo.png" */}
           </div>
           
           {/* Home button */}
-          <div className="w-10 h-10 bg-[#8B6E4E] rounded-md flex items-center justify-center">
-            <HomeIcon className="w-6 h-6 text-white" />
-          </div>
+          <Link to="/">
+            <button className="w-10 h-10 bg-[#8B6E4E] rounded-md flex items-center justify-center">
+              <HomeIcon className="w-6 h-6 text-white" />
+            </button>
+          </Link>
         </header>
 
         {/* History title */}

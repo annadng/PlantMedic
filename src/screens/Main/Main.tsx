@@ -35,7 +35,7 @@ export const Main = (): JSX.Element => {
       link: "/care-recommendations",
     },
     {
-      title: "ScanIcon History",
+      title: "Scan History",
       description:
         "Access all your previous plant scans and diagnoses in one convenient place",
       icon: (
@@ -79,22 +79,25 @@ export const Main = (): JSX.Element => {
               <div className="flex-1 relative">
                 <Input
                   className="pl-10 py-2 h-[62px] bg-neutral-100 rounded-xl font-['Rubik',Helvetica] text-[15px] text-[#8b8686]"
-                  placeholder="SearchIcon for plants..."
+                  placeholder="Search for plants..."
                 />
                 <SearchIcon className="absolute left-3 top-1/2 transform -translate-y-1/2 w-6 h-6 text-[#8b8686]" />
               </div>
-              <button className="ml-3">
-                <img
-                  className="w-[62px] h-[62px]"
-                  alt="ScanIcon button"
-                  src="https://c.animaapp.com/xhN4OijC/img/scan-button.svg"
-                />
-              </button>
+              <Link to="/Scan">
+                <button className="ml-3">
+                  <img
+                    className="w-[62px] h-[62px]"
+                    alt="ScanIcon button"
+                    src="https://c.animaapp.com/xhN4OijC/img/scan-button.svg"
+                  />
+                </button>
+              </Link>
             </div>
-
-            <Button className="w-full h-[39px] bg-[#7d9b76] hover:bg-[#6c8a65] rounded-md font-['Rubik',Helvetica] font-medium text-[15px]">
-              View My ScanIcon HistoryIcon
-            </Button>
+            <Link to="/History">
+              <Button className="w-full h-[39px] bg-[#7d9b76] hover:bg-[#6c8a65] rounded-md font-['Rubik',Helvetica] font-medium text-[15px]">
+                View My Scan History
+              </Button>
+              </Link>
           </CardContent>
         </Card>
 

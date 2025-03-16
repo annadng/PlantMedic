@@ -1,6 +1,9 @@
 import { HomeIcon } from "lucide-react";
+// import React from "react";
+// import { Button } from "../../components/ui/button";
 import { Button } from "../../components/ui/button";
 import { Card, CardContent } from "../../components/ui/card";
+import { Link } from "react-router-dom";
 import uploadImage from ".../lib/plantDetection.js";  // Adjust path if needed
 
 export const Diagnosis = (): JSX.Element => {
@@ -33,9 +36,14 @@ export const Diagnosis = (): JSX.Element => {
           <h1 className="font-medium text-[25px] text-[#4d3c30] text-center tracking-[0] leading-normal underline font-['Rubik',Helvetica]">
             {plantData.name}
           </h1>
-          <Button variant="ghost" size="icon" className="h-[43px] w-[43px]">
-            <HomeIcon className="h-6 w-6 text-[#4d3c30]" />
-          </Button>
+          <Link to="/">
+            {/* <Button variant="ghost" size="icon" className="h-[43px] w-[43px]">
+              <HomeIcon className="h-6 w-6 text-[#4d3c30]" />
+            </Button> */}
+            <button className="w-10 h-10 bg-[#8B6E4E] rounded-md flex items-center justify-center">
+              <HomeIcon className="w-6 h-6 text-white" />
+            </button>
+          </Link>
         </div>
 
         <div className="w-[276px] h-[368px] mb-4">

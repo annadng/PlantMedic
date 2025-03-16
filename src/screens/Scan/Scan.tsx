@@ -4,6 +4,7 @@ import { ArrowLeft } from "lucide-react";
 // import { Link } from "react-router-dom";
 import { Button } from "../../components/ui/button";
 import { Card, CardContent } from "../../components/ui/card";
+import { Link } from "react-router-dom";
 
 export const Scan = (): JSX.Element => {
   return (
@@ -34,10 +35,11 @@ export const Scan = (): JSX.Element => {
               {/* Navigation buttons container */}
               <div className="relative w-full h-full flex items-center justify-between px-10">
                 {/* Back button */}
-                <button className="w-12 h-12 text-gray-600 hover:text-gray-800 transition-colors">
-                  <ArrowLeft size={32} />
-                </button>
-
+                <Link to="/">
+                  <button className="w-12 h-12 text-gray-600 hover:text-gray-800 transition-colors">
+                    <ArrowLeft size={32} />
+                  </button>
+                  </Link>
                 {/* Scan button with label */}
                 <div className="flex flex-col items-center">
                   <Button 
