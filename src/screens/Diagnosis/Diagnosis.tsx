@@ -1,8 +1,10 @@
 import { HomeIcon } from "lucide-react";
 // import React from "react";
 // import { Button } from "../../components/ui/button";
+import { Button } from "../../components/ui/button";
 import { Card, CardContent } from "../../components/ui/card";
 import { Link } from "react-router-dom";
+import uploadImage from ".../lib/plantDetection.js";  // Adjust path if needed
 
 export const Diagnosis = (): JSX.Element => {
   // Plant diagnosis data
@@ -84,6 +86,14 @@ export const Diagnosis = (): JSX.Element => {
                   ))}
                 </ul>
               </div>
+
+              {/* 🔹 ADDING THE UPLOAD IMAGE BUTTON HERE */}
+              <div className="flex justify-center mt-4">
+                <Button variant="default" onClick={uploadImage}>
+                  Upload Image
+                </Button>
+              </div>
+
             </div>
           </CardContent>
         </Card>
