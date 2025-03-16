@@ -6,17 +6,20 @@ import { Diagnosis } from "./screens/Diagnosis";
 // import CareRecommendations from "./pages/CareRecommendations"; 
 import { History } from "./screens/History"; 
 import { Scan } from "./screens/Scan"; 
+import { UserProvider } from "./contexts";
 
 createRoot(document.getElementById("app") as HTMLElement).render(
   <StrictMode>
-    <Router>
-      <Routes>
-        <Route path="/" element={<Main />} />
-        <Route path="/Diagnosis" element={<Diagnosis />} />
-        {/* <Route path="/care-recommendations" element={< CareRecommendations />} /> */}
-        <Route path="/History" element={<History />} />
-        <Route path="/Scan" element={<Scan />} />
-      </Routes>
-    </Router>
+    <UserProvider>
+      <Router>
+        <Routes>
+          <Route path="/" element={<Main />} />
+          <Route path="/Diagnosis" element={<Diagnosis />} />
+          {/* <Route path="/care-recommendations" element={< CareRecommendations />} /> */}
+          <Route path="/History" element={<History />} />
+          <Route path="/Scan" element={<Scan />} />
+        </Routes>
+      </Router>
+    </UserProvider>
   </StrictMode>
 );

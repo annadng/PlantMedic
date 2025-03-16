@@ -3,35 +3,6 @@ import { useState, useRef } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { Button } from "../../components/ui/button";
 import { Card, CardContent } from "../../components/ui/card";
-<<<<<<< HEAD
-import { Link } from "react-router-dom";
-import { useState, useRef } from "react";
-
-export const Scan = (): JSX.Element => {
-  const [cameraOpen, setCameraOpen] = useState(false);
-  const videoRef = useRef<HTMLVideoElement | null>(null);
-
-  const openCamera = async () => {
-    try {
-      const stream = await navigator.mediaDevices.getUserMedia({ video: true });
-      if (videoRef.current) {
-        videoRef.current.srcObject = stream;
-      }
-      setCameraOpen(true);
-    } catch (error) {
-      console.error("Error accessing camera:", error);
-    }
-  };
-
-  const closeCamera = () => {
-    if (videoRef.current && videoRef.current.srcObject) {
-      const stream = videoRef.current.srcObject as MediaStream;
-      stream.getTracks().forEach((track) => track.stop());
-    }
-    setCameraOpen(false);
-  };
-
-=======
 import { useUser } from "../../contexts/UserContext";
 import { diagnosePlant, recordPlantScan } from "../../services/plantService";
 import { LoadingScreen } from "../LoadingScreen";
@@ -121,7 +92,6 @@ export const Scan = () => {
     return <LoadingScreen />;
   }
   
->>>>>>> b0ad1e6d33ed672fa6b9e1131d21b4309f9c6739
   return (
     <div className="flex flex-col justify-center items-center w-full h-screen bg-gray-100">
       <div className="relative w-full max-w-[393px] h-full overflow-hidden">
@@ -164,18 +134,14 @@ export const Scan = () => {
                 <div className="flex flex-col items-center">
                   <Button 
                     className="w-20 h-20 bg-[#7d9b76] hover:bg-[#6c8a65] rounded-md flex items-center justify-center mb-3"
-<<<<<<< HEAD
-                    onClick={openCamera}
-=======
                     onClick={handleScanClick}
->>>>>>> b0ad1e6d33ed672fa6b9e1131d21b4309f9c6739
                   >
                     <div className="text-white">
                       <Camera size={32} />
                     </div>
                   </Button>
                   <span className="font-['Rubik',Helvetica] font-medium text-[#635c5c] text-base">
-                      Scan Plant
+                    Scan Plant
                   </span>
                 </div>
 
@@ -199,20 +165,6 @@ export const Scan = () => {
             </div>
           </div>
         </div>
-
-        {/* Camera Preview */}
-        {cameraOpen && (
-          <div className="absolute inset-0 flex flex-col items-center justify-center bg-black bg-opacity-80">
-            <video ref={videoRef} autoPlay className="w-full max-w-md h-auto"></video>
-            <button 
-              className="mt-4 px-4 py-2 bg-red-500 text-white rounded-md"
-              onClick={closeCamera}
-            >
-              Close Camera
-            </button>
-          </div>
-        )}
-
       </div>
     </div>
   );
